@@ -1,0 +1,26 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+
+
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-card {
+  max-width: 400px;
+}
+
+
+.add-form {
+  padding-left: 426px;
+  padding-right: 426px;
+  padding-top: 50px;
+}
+
+.add-user {
+  padding-left: 160px;
+}

@@ -1,0 +1,77 @@
+
+<!--**** SAMPLE FORM INPUT FOR THE FORM ***** -->
+<!--
+  <mat-form-field appearance="outline">
+    <mat-label>First Name </mat-label>
+    <input formControlName="firstName" matInput placeholder="Firstname">
+  </mat-form-field>
+
+-->
+
+
+<form class = "add-form" [formGroup] = "addForm">
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>First Name</mat-label>
+
+    <input formControlName="fname"  matInput placeholder="Ex. Haile" value=" ">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Last Name</mat-label>
+
+    <input formControlName="lname" matInput placeholder="Ex. Girma" value=" ">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>E-mail Address</mat-label>
+
+    <input formControlName="email" appearance="outline" matInput placeholder="Ex. xxxx@domain.com" value=" ">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Confirm E-mail Address</mat-label>
+
+    <input formControlName="cemail" matInput placeholder="Ex. xxxx@domain.com" value=" ">
+  </mat-form-field>
+
+
+  <div class="signup-button">
+  <button mat-raised-button color="primary" (click)="register()">Sign Up</button>
+  </div>
+
+</form>
+
+<br>
+<br>
+
+<div class="User Table">
+  <h3>List of Users</h3>
+
+<table class = "table">
+  <thead>
+   <h4 *ngIf="!isResultLoaded"> Loading .......</h4>
+  <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">E-mail</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let UserItem of UserArray">
+    <td>{{UserItem.userid}}</td>
+    <td>{{UserItem.fname}}</td>
+    <td>{{UserItem.lname}}</td>
+    <td>{{UserItem.email}}</td>
+    <td>
+      <button  type="button" class="btn btn-success" (click)="setUpdate(UserItem)">Edit</button>
+      <button type="button" class="btn btn-danger" (click)="setDelete(UserItem)">Delete</button>
+    </td>
+
+  </tr>
+</tbody>
+</table>
+
+</div>
+
